@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+
+<body style="background-color: cornsilk;margin: 20px;font-family: Arial, Helvetica, sans-serif;font-weight: 500;color: black;align-items: center;text-align: center;box-sizing: border-box;">
+    <h1>Welcome to the JavaScript Programming</h1>
+    <h2>Task - Switch Case</h2>
+    <p style="font-size: large;">We are going to perform arithmetic operations. Please select an option from 1 to 4:</p>
+    <div style=" margin:5% 39% ;border: 2px solid red; text-align: left;border-radius: 10px;box-shadow: 0 0 10px rgb(213, 139, 139);padding: 20px;line-height: 2.5;font-size: large;width: 300px;">
+    <ul style="list-style-type: none;">
+        <li>1 - Addition</li>
+        <li>2 - Subtraction</li>
+        <li>3 - Multiplication</li>
+        <li>4 - Division</li>
+    </ul>
+    </div>
+   
+    <p style="font-size: large;">Click the "Start" button to proceed.</p>
+
+    <button  style="border: 2px solid red ;border-radius: 5px;background-color: aqua;color:rgb(12, 0, 0);padding: 5px 10px; cursor:pointer;" onclick="calculate()">Start</button>
+    <p id="res" style="background-color: antiquewhite;margin: 30px;padding: 30px;align-items: center;justify-content: center;font-family: Arial, Helvetica, sans-serif;font-weight: 500;color: black;border: 2px solid red;border-radius: 10px;box-shadow: 0 0 10px rgb(178, 117, 117);"></p>
+    <script>
+function calculate() {
+    const option = prompt("Enter Option (1-4):");
+    const num1 = parseFloat(prompt("Enter First Number:"));
+    const num2 = parseFloat(prompt("Enter Second Number:"));
+    let result;
+    let message;
+
+    switch (option) {
+        case '1':
+            result = num1 + num2;
+            message = `The addition of ${num1} + ${num2} is ${result}`;
+            break;
+        case '2':
+            result = num1 - num2;
+            message = `The subtraction of ${num1} - ${num2} is ${result}`;
+            break;
+        case '3':
+            result = num1 * num2;
+            message = `The multiplication of ${num1} * ${num2} is ${result}`;
+            break;
+        case '4':
+            if (num2 !== 0) {
+                result = num1 / num2;
+                message = `The division of ${num1} / ${num2} is ${result}`;
+            } else {
+                message = "Error: Division by zero is not allowed.";
+            }
+            break;
+        default:
+            message = "Invalid option. Please enter a number between 1 and 4.";
+    }
+
+    document.getElementById("res").innerText = message;
+}
+</script>
+
+</body>
+
+</html>
